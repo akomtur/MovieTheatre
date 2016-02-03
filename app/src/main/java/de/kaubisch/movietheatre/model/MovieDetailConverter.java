@@ -3,11 +3,8 @@ package de.kaubisch.movietheatre.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
-import de.kaubisch.movietheatre.MovieDetail;
 
 /**
  * Created by kaubisch on 10.12.15.

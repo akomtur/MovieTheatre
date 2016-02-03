@@ -5,8 +5,6 @@ import android.net.Uri;
 import java.util.List;
 
 import de.kaubisch.movietheatre.BuildConfig;
-import de.kaubisch.movietheatre.Movie;
-import de.kaubisch.movietheatre.MovieDetail;
 import de.kaubisch.movietheatre.presenter.MovieOverviewPresenter;
 
 /**

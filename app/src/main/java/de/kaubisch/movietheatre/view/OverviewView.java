@@ -2,7 +2,7 @@ package de.kaubisch.movietheatre.view;
 
 import java.util.List;
 
-import de.kaubisch.movietheatre.Movie;
+import de.kaubisch.movietheatre.model.Movie;
 
 /**
  * Created by kaubisch on 09.12.15.

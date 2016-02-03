@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import de.kaubisch.movietheatre.Movie;
-
 /**
  * Created by kaubisch on 10.12.15.
  */

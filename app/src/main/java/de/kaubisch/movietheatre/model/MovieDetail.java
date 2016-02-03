@@ -1,9 +1,8 @@
-package de.kaubisch.movietheatre;
+package de.kaubisch.movietheatre.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -17,11 +16,23 @@ public class MovieDetail implements Parcelable {
     public String imagePath;
     public int durationInMin;
 
+    public static final Creator<MovieDetail> CREATOR = new Creator<MovieDetail>() {
+        @Override
+        public MovieDetail createFromParcel(Parcel in) {
+            return new MovieDetail(in);
+        }
+
+        @Override
+        public MovieDetail[] newArray(int size) {
+            return new MovieDetail[size];
+        }
+    };
+
     public MovieDetail() {
         super();
     }
 
-    public MovieDetail(final Parcel in) {
+    private MovieDetail(final Parcel in) {
         title = in.readString();
         releaseDate = new Date(in.readLong());
         voteAverage = in.readDouble();

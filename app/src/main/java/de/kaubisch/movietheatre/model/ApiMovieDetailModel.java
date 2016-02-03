@@ -3,7 +3,6 @@ package de.kaubisch.movietheatre.model;
 import android.net.Uri;
 
 import de.kaubisch.movietheatre.BuildConfig;
-import de.kaubisch.movietheatre.MovieDetail;
 import de.kaubisch.movietheatre.presenter.MovieDetailPresenter;
 
 /**

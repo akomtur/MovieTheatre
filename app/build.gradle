@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
 
 android {
     compileSdkVersion 23
@@ -13,12 +16,12 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "MOVIE_API_KEY", '""'
+            buildConfigField "String", "MOVIE_API_KEY", '"4e789938cacf0839c1d4cb0fc85e2430"'
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "MOVIE_API_KEY", '""'
+            buildConfigField "String", "MOVIE_API_KEY", '"4e789938cacf0839c1d4cb0fc85e2430"'
         }
     }
     compileOptions {
@@ -33,4 +36,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.dagger:dagger:2.0.2'
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
 }

@@ -1,6 +1,6 @@
 package de.kaubisch.movietheatre.view;
 
-import de.kaubisch.movietheatre.MovieDetail;
+import de.kaubisch.movietheatre.model.MovieDetail;
 
 /**
  * Created by kaubisch on 10.12.15.

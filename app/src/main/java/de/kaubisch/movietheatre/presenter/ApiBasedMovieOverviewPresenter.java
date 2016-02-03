@@ -3,7 +3,7 @@ package de.kaubisch.movietheatre.presenter;
 import java.util.List;
 
 import de.kaubisch.movietheatre.model.ApiMovieOverviewModel;
-import de.kaubisch.movietheatre.Movie;
+import de.kaubisch.movietheatre.model.Movie;
 import de.kaubisch.movietheatre.model.MoviesModel;
 import de.kaubisch.movietheatre.view.OverviewView;
 

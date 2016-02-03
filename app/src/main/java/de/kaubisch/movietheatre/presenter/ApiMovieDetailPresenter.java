@@ -1,6 +1,6 @@
 package de.kaubisch.movietheatre.presenter;
 
-import de.kaubisch.movietheatre.MovieDetail;
+import de.kaubisch.movietheatre.model.MovieDetail;
 import de.kaubisch.movietheatre.model.ApiMovieDetailModel;
 import de.kaubisch.movietheatre.model.DetailModel;
 import de.kaubisch.movietheatre.view.DetailView;

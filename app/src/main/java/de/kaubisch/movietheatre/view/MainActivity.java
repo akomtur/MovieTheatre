@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import de.kaubisch.movietheatre.R;
-import de.kaubisch.movietheatre.Movie;
+import de.kaubisch.movietheatre.model.Movie;
 import de.kaubisch.movietheatre.presenter.ApiBasedMovieOverviewPresenter;
 import de.kaubisch.movietheatre.presenter.MovieOverviewPresenter;
 

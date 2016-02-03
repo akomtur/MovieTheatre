@@ -1,9 +1,7 @@
-package de.kaubisch.movietheatre;
+package de.kaubisch.movietheatre.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.io.Serializable;
 
 /**
  * Created by kaubisch on 09.12.15.
@@ -14,11 +12,23 @@ public class Movie implements Parcelable {
     public double rating;
     public String image;
 
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
+
     public Movie() {
         super();
     }
 
-    public Movie(final Parcel in) {
+    private Movie(final Parcel in) {
         id = in.readInt();
         name = in.readString();
         rating = in.readDouble();

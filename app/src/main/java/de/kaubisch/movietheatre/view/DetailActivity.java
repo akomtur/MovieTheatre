@@ -1,13 +1,9 @@
 package de.kaubisch.movietheatre.view;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +12,9 @@ import com.squareup.picasso.Picasso;
 import java.util.Calendar;
 import java.util.Date;
 
-import de.kaubisch.movietheatre.MovieDetail;
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import de.kaubisch.movietheatre.model.MovieDetail;
 import de.kaubisch.movietheatre.R;
 import de.kaubisch.movietheatre.presenter.ApiMovieDetailPresenter;
 import de.kaubisch.movietheatre.presenter.MovieDetailPresenter;
@@ -26,12 +24,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
     private MovieDetailPresenter presenter;
     private ProgressDialog progress;
 
-    private TextView title;
-    private ImageView poster;
-    private TextView releaseYear;
-    private TextView duration;
-    private TextView description;
-    private TextView voting;
+    @Bind(R.id.detail_title) TextView title;
+    @Bind(R.id.detail_image) ImageView poster;
+    @Bind(R.id.detail_release_year) TextView releaseYear;
+    @Bind(R.id.detail_duration) TextView duration;
+    @Bind(R.id.detail_description) TextView description;
+    @Bind(R.id.detail_vote) TextView voting;
 
 
     @Override
@@ -39,14 +37,9 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        title = (TextView) findViewById(R.id.detail_title);
-        poster = (ImageView) findViewById(R.id.detail_image);
-        releaseYear = (TextView) findViewById(R.id.detail_release_year);
-        duration = (TextView) findViewById(R.id.detail_duration);
-        description = (TextView) findViewById(R.id.detail_description);
-        voting = (TextView) findViewById(R.id.detail_vote);
-        presenter = new ApiMovieDetailPresenter(this);
+        ButterKnife.bind(this);
 
+        presenter = new ApiMovieDetailPresenter(this);
         presenter.loadMovieDetail(getIntent().getIntExtra(DETAIL_ID_KEY, -1));
     }
 
