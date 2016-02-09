@@ -109,6 +109,7 @@ public class ApiMovieDetailPresenter implements MovieDetailPresenter {
         savedInstance.putParcelable("movieDetail", movieDetail);
         savedInstance.putParcelableArrayList("reviews", new ArrayList<Parcelable>(reviewCollection));
         savedInstance.putParcelableArrayList("trailer", new ArrayList<Parcelable>(trailerCollection));
+        savedInstance.putBoolean("isFavorite", isFavorite);
     }
 
     @Override
@@ -116,6 +117,7 @@ public class ApiMovieDetailPresenter implements MovieDetailPresenter {
         onReviewsLoaded(savedInstance.<Review>getParcelableArrayList("reviews"));
         onVideoLoaded(savedInstance.<Trailer>getParcelableArrayList("trailer"));
         onDetailLoaded(savedInstance.<MovieDetail>getParcelable("movieDetail"));
+        isFavorite = savedInstance.getBoolean("isFavorite");
     }
 
     @Override
