@@ -1,6 +1,8 @@
 <resources>
+    <dimen name="image_width">185px</dimen>
     <string name="app_name">MovieTheatre</string>
     <string name="image_width">w185</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="duration_in_min">" min"</string>
+    <string name="image_url">http://image.tmdb.org/t/p/</string>
 </resources>

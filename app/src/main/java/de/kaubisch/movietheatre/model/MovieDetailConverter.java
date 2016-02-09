@@ -24,11 +24,10 @@ public class MovieDetailConverter implements UriLoaderTask.JsonConverter<MovieDe
             movieDetail.releaseDate = sdf.parse(root.getString("release_date"));
             movieDetail.voteAverage = root.getDouble("vote_average");
             movieDetail.durationInMin = root.getInt("runtime");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (JSONException | ParseException e) {
             e.printStackTrace();
         }
+
         return movieDetail;
     }
 }

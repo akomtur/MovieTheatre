@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="0dp"
+    android:padding="0dp"
+    tools:context=".view.MainActivity">
+    <fragment
+        class="de.kaubisch.movietheatre.view.MainViewFragment"
+        android:id="@+id/main_fragment"
+        android:layout_width="@dimen/main_fragment_size"
+        android:layout_height="match_parent"
+        tools:layout="@layout/main_fragment" />
+    <fragment
+        class="de.kaubisch.movietheatre.view.DetailViewFragment"
+        android:id="@+id/detail_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/detail_fragment" />
+</LinearLayout>

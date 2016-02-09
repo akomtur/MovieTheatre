@@ -16,12 +16,12 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "MOVIE_API_KEY", '"4e789938cacf0839c1d4cb0fc85e2430"'
+            buildConfigField "String", "MOVIE_API_KEY", ''
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "MOVIE_API_KEY", '"4e789938cacf0839c1d4cb0fc85e2430"'
+            buildConfigField "String", "MOVIE_API_KEY", ''
         }
     }
     compileOptions {

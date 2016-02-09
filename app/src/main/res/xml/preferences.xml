@@ -4,7 +4,7 @@
         android:key="sortOrder"
         android:title="Sort order"
         android:summary="Define sort order of overview"
-        defaultValue="popular"
+        defaultValue="POPULARITY"
         android:entries="@array/sortEntries"
         android:entryValues="@array/sortValues" />
 </PreferenceScreen>
