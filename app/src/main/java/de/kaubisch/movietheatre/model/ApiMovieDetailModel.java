@@ -90,8 +90,12 @@ public class ApiMovieDetailModel implements DetailModel {
                 values.put(FavoriteContract.FavoriteEntry.COLUMN_FAVORITE_ID, movieId);
                 values.put(FavoriteContract.FavoriteEntry.COLUMN_IMAGE_PATH, imagePath);
                 database.insert(FavoriteContract.FavoriteEntry.TABLE_NAME, null, values);
-                callback.onResult(null);
                 return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                callback.onResult(null);
             }
         }.execute();
     }
@@ -105,26 +109,33 @@ public class ApiMovieDetailModel implements DetailModel {
                 database.delete(FavoriteContract.FavoriteEntry.TABLE_NAME
                     , FavoriteContract.FavoriteEntry.COLUMN_FAVORITE_ID +" = ? "
                     , new String[] {String.valueOf(movieId)});
-                callback.onResult(null);
                 return null;
             }
 
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                callback.onResult(null);
+            }
         }.execute();
     }
 
     @Override
     public void isFavorite(int movieId, final AfterQueryCallback<Boolean> callback) {
-        new AsyncTask<Integer, Void, Void>() {
+        new AsyncTask<Integer, Void, Boolean>() {
             @Override
-            protected Void doInBackground(Integer... params) {
+            protected Boolean doInBackground(Integer... params) {
                 SQLiteDatabase database = db.getWritableDatabase();
                 Cursor query = database.query(FavoriteContract.FavoriteEntry.TABLE_NAME
                         , new String[]{FavoriteContract.FavoriteEntry.COLUMN_FAVORITE_ID}
                         , FavoriteContract.FavoriteEntry.COLUMN_FAVORITE_ID + "= ?"
                         , new String[]{String.valueOf(params[0])}
                         , null, null, null);
-                callback.onResult(query.getCount() > 0);
-                return null;
+                return query.getCount() > 0;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean result) {
+                callback.onResult(result);
             }
         }.execute(movieId);
     }

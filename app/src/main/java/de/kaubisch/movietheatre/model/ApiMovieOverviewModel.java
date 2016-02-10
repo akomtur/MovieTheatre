@@ -46,9 +46,9 @@ public class ApiMovieOverviewModel implements MoviesModel {
 
     @Override
     public void getFavorites(final DetailModel.AfterQueryCallback<Collection<Favorite>> callback) {
-        new AsyncTask<Void, Void, Void>() {
+        new AsyncTask<Void, Void, List<Favorite>>() {
             @Override
-            protected Void doInBackground(Void... params) {
+            protected List<Favorite> doInBackground(Void... params) {
                 SQLiteDatabase database = db.getReadableDatabase();
                 Cursor query = database.query(FavoriteContract.FavoriteEntry.TABLE_NAME
                         , new String[]{FavoriteContract.FavoriteEntry.COLUMN_FAVORITE_ID, FavoriteContract.FavoriteEntry.COLUMN_IMAGE_PATH}
@@ -64,8 +64,12 @@ public class ApiMovieOverviewModel implements MoviesModel {
                         favoriteList.add(new Favorite(query.getInt(idIdx), query.getString(pathIdx)));
                     } while(query.moveToNext());
                 }
-                callback.onResult(favoriteList);
-                return null;
+                return favoriteList;
+            }
+
+            @Override
+            protected void onPostExecute(List<Favorite> favorites) {
+                callback.onResult(favorites);
             }
         }.execute();
     }

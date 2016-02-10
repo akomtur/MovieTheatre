@@ -195,11 +195,6 @@ public class DetailViewFragment extends Fragment implements DetailView {
     @Override
     public void updateFavoriteStatus(boolean checked) {
         final int drawableId = checked ? R.drawable.btn_star_big_on : R.drawable.btn_star_big_off;
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                favoriteButton.setImageResource(drawableId);
-            }
-        });
+        favoriteButton.setImageResource(drawableId);
     }
 }

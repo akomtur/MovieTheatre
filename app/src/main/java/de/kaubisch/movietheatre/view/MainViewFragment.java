@@ -113,16 +113,11 @@ public class MainViewFragment extends Fragment implements MainView {
     }
     @Override
     public void updateData(final List<Movie> movies) {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                movieAdapter.clear();
-                movieAdapter.addAll(movies);
-                if(selectFirstItem && !movies.isEmpty()) {
-                    movieAdapter.getExecutor().execute(movies.get(0));
-                }
-            }
-        });
+        movieAdapter.clear();
+        movieAdapter.addAll(movies);
+        if(selectFirstItem && !movies.isEmpty()) {
+            movieAdapter.getExecutor().execute(movies.get(0));
+        }
     }
     @Override
     public void showProgress() {
