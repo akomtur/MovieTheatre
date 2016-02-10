@@ -11,13 +11,15 @@
     <fragment
         class="de.kaubisch.movietheatre.view.MainViewFragment"
         android:id="@+id/main_fragment"
-        android:layout_width="@dimen/main_fragment_size"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         tools:layout="@layout/main_fragment" />
     <fragment
         class="de.kaubisch.movietheatre.view.DetailViewFragment"
         android:id="@+id/detail_fragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         tools:layout="@layout/detail_fragment" />
 </LinearLayout>

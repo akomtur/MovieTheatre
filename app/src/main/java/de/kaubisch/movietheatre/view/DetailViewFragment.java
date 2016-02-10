@@ -72,10 +72,21 @@ public class DetailViewFragment extends Fragment implements DetailView {
         if(savedInstanceState != null) {
             presenter.restoreState(savedInstanceState);
         } else {
-            triggerLoadInformation(getActivity().getIntent().getIntExtra(DETAIL_ID_KEY, -1));
+            triggerLoadInformation(getMovieKey());
         }
 
         return view;
+    }
+
+    private int getMovieKey() {
+        int id = -1;
+        if(getArguments() != null) {
+            id = getArguments().getInt(DETAIL_ID_KEY, -1);
+        }
+        if(id == -1) {
+            id = getActivity().getIntent().getIntExtra(DETAIL_ID_KEY, -1);
+        }
+        return id;
     }
 
     @Override
